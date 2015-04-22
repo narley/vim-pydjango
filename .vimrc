@@ -23,7 +23,7 @@ Bundle 'cschlueter/vim-mustang'
 Bundle 'godlygeek/csapprox'
 
 " Utilities
-Bundle "tsaleh/vim-matchit"
+Bundle "eshock/vim-matchit"
 Bundle 'Raimondi/delimitMate'
 
 " Syntax Commenter
