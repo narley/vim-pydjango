@@ -1,6 +1,6 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
-setlocal fdm=manual
+setlocal fdm=diff
 setlocal fde=PythonFoldExpr(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -8,7 +8,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-lcd ~/
+lcd ~/Documents/Projetos/Django/biatrufas/biatrufas/apps/estoque/templates/estoque/fragments
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

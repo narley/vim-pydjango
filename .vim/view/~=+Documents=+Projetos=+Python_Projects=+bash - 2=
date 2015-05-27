@@ -7,8 +7,8 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
-lcd ~/
+setlocal nofen
+lcd ~/Documents/Projetos/Python_Projects
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
