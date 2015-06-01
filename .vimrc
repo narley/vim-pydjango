@@ -23,7 +23,7 @@ Bundle 'cschlueter/vim-mustang'
 Bundle 'godlygeek/csapprox'
 
 " Utilities
-Bundle "tsaleh/vim-matchit"
+Bundle "eshock/vim-matchit"
 Bundle 'Raimondi/delimitMate'
 
 " Syntax Commenter
@@ -45,6 +45,27 @@ Bundle "vim-scripts/indentpython.vim"
 
 " Versioning System
 Bundle 'tpope/vim-fugitive'
+
+" Vim-Airline
+Bundle "bling/vim-airline"
+
+" Vim-Django
+Bundle "cwood/vim-django"
+
+" Vim-Virtualenv
+Bundle 'jmcantrell/vim-virtualenv'
+
+" Vim-Surround
+Bundle 'tpope/vim-surround'
+
+" Jedi-Vim
+Bundle 'davidhalter/jedi-vim'
+
+" Python Rope
+Bundle 'python-rope/ropevim'
+
+" Vim-Autosave
+Bundle 'vim-scripts/vim-auto-save'
 
 filetype plugin indent on     " required! 
 
@@ -84,6 +105,32 @@ filetype plugin indent on     " required!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" Remove trailing whitespace on <leader>S
+if !exists('*TrimWhiteSpace')
+  function TrimWhiteSpace()
+    let @*=line(".")
+    %s/\s*$//e
+    ''
+  endfunction
+endif
+
+nnoremap <silent> <leader>S :call TrimWhiteSpace()<cr>:let @/=''<CR>
+
+" Save shortcut in Insert mode
+imap <c-l> <Esc>:w<CR>i
+
+" Shortcut to Normal Mode
+imap jj <ESC> 
+
+" To enable more color in order to use colorscheme
+set t_Co=256
+
 " Sets how many lines of history VIM has to remember
 set history=1000
 
@@ -92,6 +139,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 
 " Set to auto read when a file is changed from the outside
 set autowrite
+
 
 " With a map leader it's possible to do extra key combinations
 " leader is press comma (,) key
@@ -397,7 +445,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pep8 using F6
 " You can change with this :
-let g:pep8_map='<F6>'
+let g:pep8_map='<F2>'
 
 " Pydiction
 let g:pydiction_location='/home/ubuntu/.vim/bundle/Pydiction/complete-dict'
@@ -567,7 +615,18 @@ let g:bufExplorerSortBy = "name"
 
 autocmd BufRead,BufNew :call UMiniBufExplorer
 
+
 """""""""""""""""""""""""""""""""""
+" Vim-Django 
+"
+"""""""""""""""""""""""""""""""""""
+let g:django_projects = '/home/narley/Documents/Projetos/Django/'
+let g:django_active_virtualenv = 1
+" let g:django_activate_nerdtree = 1
+" let g:django_projects_search_exp = '*/*/apps'
+
+let g:virtualenv_directory = '/home/narley/Documents/Projetos/Django/biatrufas/'
+
 " Stolen from http://dev.gentoo.org/~bass/configs/vimrc.html
 "
 " Adapt the status line accourding to the window
