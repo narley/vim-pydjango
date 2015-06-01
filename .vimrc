@@ -67,6 +67,9 @@ Bundle 'python-rope/ropevim'
 " Vim-Autosave
 Bundle 'vim-scripts/vim-auto-save'
 
+"Vim-Obsession
+Bundle 'tpope/vim-obsession'
+
 filetype plugin indent on     " required! 
 
 
@@ -89,6 +92,14 @@ filetype plugin indent on     " required!
 " NeoComplcache : https://github.com/Shougo/neocomplcache
 " IndentPython : https://github.com/vim-scripts/indentpython.vim
 " Fugitive : https://github.com/tpope/vim-fugitive
+" Vim-Django: https://github.com/cwood/vim-django
+" Vim-Virtualenv: https://github.com/jmcantrell/vim-virtualenv
+" Vim-Surround: https://github.com/tpope/vim-surround
+" Jedi-Vim: https://github.com/tdavidhalter/jedi-vim
+" Rope-vim: https://github.com/python-rope/ropevim
+" Vim-Autosave: https://github.com/vim-scripts/vim-auto-save
+" Vim-Obsession: https://github.com/tpope/vim-obsession
+
 
 " Key Shorcuts by Default
 " Leader                = ,
@@ -126,7 +137,10 @@ nnoremap <silent> <leader>S :call TrimWhiteSpace()<cr>:let @/=''<CR>
 imap <c-l> <Esc>:w<CR>i
 
 " Shortcut to Normal Mode
-imap jj <ESC> 
+imap jj <ESC>
+
+" Toggle Paste
+set pastetoggle=<F2>
 
 " To enable more color in order to use colorscheme
 set t_Co=256
